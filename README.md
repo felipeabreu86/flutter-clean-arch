@@ -1,16 +1,48 @@
-# flutter_clean_arch
+# Flutter Clean Architecture
+[![NPM](https://img.shields.io/badge/License-GNU%20GENERAL%20PUBLIC-green)](https://github.com/felipeabreu86/flutter-clean-arch/blob/main/LICENSE) 
 
-A new Flutter project.
+# Sobre o Projeto
 
-## Getting Started
+**Flutter Clean Architecture** é um projeto mobile cross-platform feito em Flutter e desenvolvido por <b>Felipe Abreu</b> para implementar os conceitos da Clean Architecture. Este estudo foi baseado em um projeto do excelente desenvolvedor AbdulMuaz Aqeel, com quem tenho aprendido muito.
 
-This project is a starting point for a Flutter application.
+## Layout Mobile
+(Em Construção)
 
-A few resources to get you started if this is your first Flutter project:
+## Layout Web
+(Em Construção)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Tecnologias Utilizadas
+- [flutter](https://flutter.dev/ "flutter")
+- [dart](https://dart.dev/ "dart")
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Funcionalidades
+- ...
+
+# Como Executar o Projeto
+
+## Pré-requisitos
+- Flutter ([como instalar](https://flutter.dev/docs/get-started/install "Como instalar o Flutter"))
+
+```bash
+# clonar repositório
+git clone https://github.com/felipeabreu86/flutter-clean-arch.git
+
+# entrar na pasta do projeto
+cd flutter-clean-arch
+
+# rodar o comando abaixo para obter as dependências do projeto
+flutter pub get
+
+# descobrir os dispositivos disponíveis para executar o app
+# copiar o ID do dispositivo para utilizá-lo no próximo comando 
+flutter devices
+
+# rodar o projeto no seu dispositivo
+flutter run -d <Device ID>
+```
+
+# Autor
+
+<b>Felipe Abreu</b><br>
+https://www.linkedin.com/in/feabreu/<br>
+https://github.com/felipeabreu86/
