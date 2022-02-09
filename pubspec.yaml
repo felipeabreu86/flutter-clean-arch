@@ -1,5 +1,5 @@
 name: flutter_clean_arch
-description: A new Flutter project.
+description: Projeto Flutter com Clean Architecture.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -34,6 +34,13 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  retrofit: ^3.0.1+1
+  floor: ^1.2.0
+  flutter_bloc: ^8.0.1
+  equatable: ^2.0.3
+  get_it: ^7.2.0
+  flutter_hooks: ^0.18.2+1
+  ionicons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +52,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  lint: ^1.8.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -87,3 +95,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Butler
+      fonts:
+        - asset: assets/fonts/Butler_Bold.ttf
+        - asset: assets/fonts/Butler_Light.ttf
+        - asset: assets/fonts/Butler_Regular.ttf
+
+    - family: IBM
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-Bold.ttf
+        - asset: assets/fonts/IBMPlexSans-Light.ttf
+        - asset: assets/fonts/IBMPlexSans-Regular.ttf
