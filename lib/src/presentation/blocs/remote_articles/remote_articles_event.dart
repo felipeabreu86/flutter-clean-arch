@@ -6,3 +6,7 @@ abstract class RemoteArticlesEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class GetArticles extends RemoteArticlesEvent {
+  const GetArticles();
+}
