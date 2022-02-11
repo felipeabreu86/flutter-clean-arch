@@ -20,6 +20,7 @@ dependencies:
   flutter_hooks: ^0.18.2+1
   ionicons: ^0.1.2
   dio: ^4.0.4  
+  bloc: ^8.0.2
 
 dev_dependencies:
   flutter_test:
