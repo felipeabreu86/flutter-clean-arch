@@ -4,6 +4,6 @@ import 'package:flutter_clean_arch/src/domain/entities/article.dart';
 
 abstract class ArticlesRepository {
   Future<DataState<List<Article>>> getBreakingNewsArticles(
-    ArticlesRequestsParams params,
+    ArticlesRequestParams params,
   );
 }

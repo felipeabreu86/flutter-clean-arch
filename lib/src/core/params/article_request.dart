@@ -1,7 +1,7 @@
 import 'package:flutter_clean_arch/src/core/utils/constants.dart';
 
-class ArticlesRequestsParams {
-  ArticlesRequestsParams({
+class ArticlesRequestParams {
+  ArticlesRequestParams({
     this.apiKey = kApiKey,
     this.category = 'general',
     this.country = 'us',
