@@ -52,7 +52,7 @@ class ArticleWidget extends StatelessWidget {
             color: Colors.black.withOpacity(0.08),
           ),
           child: Image.network(
-            article.urlToImage,
+            article.urlToImage ?? '',
             fit: BoxFit.cover,
             errorBuilder: (_, __, ___) {
               return const Center(
@@ -78,7 +78,7 @@ class ArticleWidget extends StatelessWidget {
           children: [
             // Title
             Text(
-              article.title,
+              article.title ?? '',
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
@@ -94,7 +94,7 @@ class ArticleWidget extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  article.description,
+                  article.description ?? '',
                   maxLines: 2,
                 ),
               ),
@@ -106,7 +106,7 @@ class ArticleWidget extends StatelessWidget {
                 const Icon(Ionicons.time_outline, size: 16),
                 const SizedBox(width: 4),
                 Text(
-                  article.publishedAt,
+                  article.publishedAt ?? '',
                   style: const TextStyle(
                     fontSize: 12,
                   ),

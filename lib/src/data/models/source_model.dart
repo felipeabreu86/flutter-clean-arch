@@ -2,8 +2,8 @@ import 'package:flutter_clean_arch/src/domain/entities/source.dart';
 
 class SourceModel extends Source {
   const SourceModel({
-    required String id,
-    required String name,
+    String? id,
+    String? name,
   }) : super(
           id: id,
           name: name,
@@ -11,8 +11,8 @@ class SourceModel extends Source {
 
   factory SourceModel.fromJson(Map<String, dynamic> json) {
     return SourceModel(
-      id: json['id'] as String,
-      name: json['name'] as String,
+      id: json['id'] as String?,
+      name: json['name'] as String?,
     );
   }
 }

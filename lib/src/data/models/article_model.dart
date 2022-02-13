@@ -3,15 +3,15 @@ import 'package:flutter_clean_arch/src/domain/entities/article.dart';
 
 class ArticleModel extends Article {
   const ArticleModel({
-    required int id,
-    required SourceModel source,
-    required String author,
-    required String title,
-    required String description,
-    required String url,
-    required String urlToImage,
-    required String publishedAt,
-    required String content,
+    int? id,
+    SourceModel? source,
+    String? author,
+    String? title,
+    String? description,
+    String? url,
+    String? urlToImage,
+    String? publishedAt,
+    String? content,
   }) : super(
           id: id,
           source: source,
@@ -26,15 +26,15 @@ class ArticleModel extends Article {
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
     return ArticleModel(
-      id: map['id'] as int,
+      id: map['id'] as int?,
       source: SourceModel.fromJson(map['source'] as Map<String, dynamic>),
-      author: map['author'] as String,
-      title: map['title'] as String,
-      description: map['description'] as String,
-      url: map['url'] as String,
-      urlToImage: map['urlToImage'] as String,
-      publishedAt: map['publishedAt'] as String,
-      content: map['content'] as String,
+      author: map['author'] as String?,
+      title: map['title'] as String?,
+      description: map['description'] as String?,
+      url: map['url'] as String?,
+      urlToImage: map['urlToImage'] as String?,
+      publishedAt: map['publishedAt'] as String?,
+      content: map['content'] as String?,
     );
   }
 }
