@@ -48,23 +48,21 @@ class BreakingNewsView extends HookWidget {
   }
 
   Widget _buildBody(ScrollController scrollController) {
-    // return _buildArticle(scrollController);
     return BlocBuilder<RemoteArticlesBloc, RemoteArticlesState>(
       builder: (_, state) {
         if (state is RemoteArticlesLoading) {
           return const Center(child: CupertinoActivityIndicator());
-        }
-        if (state is RemoteArticlesError) {
+        } else if (state is RemoteArticlesError) {
           return const Center(child: Icon(Ionicons.refresh));
-        }
-        if (state is RemoteArticlesDone) {
+        } else if (state is RemoteArticlesDone) {
           return _buildArticle(
             scrollController,
             state.articles!,
             state.noMoreData!,
           );
+        } else {
+          return const SizedBox();
         }
-        return const SizedBox();
       },
     );
   }
