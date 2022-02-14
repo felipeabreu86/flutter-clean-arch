@@ -1,6 +1,9 @@
 import 'package:equatable/equatable.dart';
+import 'package:floor/floor.dart';
+import 'package:flutter_clean_arch/src/core/utils/constants.dart';
 import 'package:flutter_clean_arch/src/domain/entities/source.dart';
 
+@Entity(tableName: kArticlesTableName)
 class Article extends Equatable {
   const Article({
     this.id,
@@ -14,6 +17,7 @@ class Article extends Equatable {
     this.content,
   });
 
+  @PrimaryKey(autoGenerate: true)
   final int? id;
   final Source? source;
   final String? author;
