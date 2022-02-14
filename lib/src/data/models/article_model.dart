@@ -4,7 +4,7 @@ import 'package:flutter_clean_arch/src/domain/entities/article.dart';
 class ArticleModel extends Article {
   const ArticleModel({
     int? id,
-    SourceModel? source,
+    required SourceModel source,
     String? author,
     String? title,
     String? description,

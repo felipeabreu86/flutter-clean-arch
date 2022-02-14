@@ -7,7 +7,7 @@ import 'package:flutter_clean_arch/src/domain/entities/source.dart';
 class Article extends Equatable {
   const Article({
     this.id,
-    this.source,
+    required this.source,
     this.author,
     this.title,
     this.description,
@@ -19,7 +19,7 @@ class Article extends Equatable {
 
   @PrimaryKey(autoGenerate: true)
   final int? id;
-  final Source? source;
+  final Source source;
   final String? author;
   final String? title;
   final String? description;
