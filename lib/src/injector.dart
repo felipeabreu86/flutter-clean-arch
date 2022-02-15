@@ -5,6 +5,10 @@ import 'package:flutter_clean_arch/src/data/datasources/remote/news_api_service.
 import 'package:flutter_clean_arch/src/data/repositories/articles_repository_impl.dart';
 import 'package:flutter_clean_arch/src/domain/repositories/articles_repository.dart';
 import 'package:flutter_clean_arch/src/domain/usecases/get_articles_usecase.dart';
+import 'package:flutter_clean_arch/src/domain/usecases/get_saved_articles_usecase.dart';
+import 'package:flutter_clean_arch/src/domain/usecases/remove_article_usecase.dart';
+import 'package:flutter_clean_arch/src/domain/usecases/save_article_usecase.dart';
+import 'package:flutter_clean_arch/src/presentation/blocs/local_articles/local_articles_bloc.dart';
 import 'package:flutter_clean_arch/src/presentation/blocs/remote_articles/remote_articles_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -31,9 +35,21 @@ Future<void> initializeDependencies() async {
   injector.registerSingleton<GetArticlesUseCase>(
     GetArticlesUseCase(injector()),
   );
+  injector.registerSingleton<GetSavedArticlesUseCase>(
+    GetSavedArticlesUseCase(injector()),
+  );
+  injector.registerSingleton<SaveArticleUseCase>(
+    SaveArticleUseCase(injector()),
+  );
+  injector.registerSingleton<RemoveArticleUseCase>(
+    RemoveArticleUseCase(injector()),
+  );
 
   // Blocs
   injector.registerFactory<RemoteArticlesBloc>(
     () => RemoteArticlesBloc(injector()),
+  );
+  injector.registerFactory<LocalArticlesBloc>(
+    () => LocalArticlesBloc(injector(), injector(), injector()),
   );
 }
