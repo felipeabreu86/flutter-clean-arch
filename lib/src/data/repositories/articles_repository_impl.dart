@@ -3,14 +3,16 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_arch/src/core/params/article_request.dart';
 import 'package:flutter_clean_arch/src/core/resources/data_state.dart';
+import 'package:flutter_clean_arch/src/data/datasources/local/app_database.dart';
 import 'package:flutter_clean_arch/src/data/datasources/remote/news_api_service.dart';
 import 'package:flutter_clean_arch/src/domain/entities/article.dart';
 import 'package:flutter_clean_arch/src/domain/repositories/articles_repository.dart';
 
 class ArticlesRepositoryImpl implements ArticlesRepository {
-  const ArticlesRepositoryImpl(this._newsApiService);
+  const ArticlesRepositoryImpl(this._newsApiService, this._appDatabase);
 
   final NewsApiService _newsApiService;
+  final AppDatabase _appDatabase;
 
   @override
   Future<DataState<List<Article>>> getBreakingNewsArticles(
@@ -43,19 +45,16 @@ class ArticlesRepositoryImpl implements ArticlesRepository {
 
   @override
   Future<List<Article>> getSavedArticles() {
-    // TODO: implement getSavedArticles
-    throw UnimplementedError();
+    return _appDatabase.articleDao.getAllArticles();
   }
 
   @override
   Future<void> removeArticle(Article article) {
-    // TODO: implement removeArticle
-    throw UnimplementedError();
+    return _appDatabase.articleDao.deleteArticle(article);
   }
 
   @override
   Future<void> saveArticle(Article article) {
-    // TODO: implement saveArticle
-    throw UnimplementedError();
+    return _appDatabase.articleDao.insertArticle(article);
   }
 }
