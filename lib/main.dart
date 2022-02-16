@@ -20,7 +20,7 @@ class ArticlesApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: kMaterialAppTitle,
-        onGenerateRoute: AppRoutes().onGenerateRoutes,
+        onGenerateRoute: onGenerateRoutes,
         theme: AppTheme().light,
       ),
     );
