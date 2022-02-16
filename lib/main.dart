@@ -21,7 +21,7 @@ class ArticlesApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: kMaterialAppTitle,
         onGenerateRoute: onGenerateRoutes,
-        theme: AppTheme().light,
+        theme: themeDataLight,
       ),
     );
   }
