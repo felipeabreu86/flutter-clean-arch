@@ -82,7 +82,7 @@ class BreakingNewsView extends HookWidget {
               builder: (context) => ArticleWidget(
                 article: e,
                 onArticlePressed: (e) => _onArticlePressed(context, e),
-                onRemove: (e) => _onArticleRemoved(context, e),
+                onRemove: (e) => {},
               ),
             ),
           ),
@@ -118,10 +118,6 @@ class BreakingNewsView extends HookWidget {
 
   void _onArticlePressed(BuildContext context, Article article) {
     Navigator.pushNamed(context, '/ArticleDetailsView', arguments: article);
-  }
-
-  void _onArticleRemoved(BuildContext context, Article article) {
-    // TODO
   }
 
   void _onShowSavedArticlesViewTapped(BuildContext context) {
