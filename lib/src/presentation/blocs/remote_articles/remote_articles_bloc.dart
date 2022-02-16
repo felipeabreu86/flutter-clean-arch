@@ -41,9 +41,7 @@ class RemoteArticlesBloc
       _articles.addAll(articles);
       _page++;
       emit(RemoteArticlesDone(_articles, noMoreData: noMoreData));
-    }
-
-    if (dataState is DataFailed) {
+    } else if (dataState is DataFailed) {
       emit(RemoteArticlesError(dataState.error));
     }
   }
