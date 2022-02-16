@@ -49,7 +49,7 @@ class LocalArticlesBloc extends Bloc<LocalArticlesEvent, LocalArticlesState> {
   ) async {
     if (event.article != null) {
       await _removeArticleUseCase(params: event.article!);
-      _getAllSavedArticles(event, emit);
+      await _getAllSavedArticles(event, emit);
     }
   }
 
@@ -59,7 +59,7 @@ class LocalArticlesBloc extends Bloc<LocalArticlesEvent, LocalArticlesState> {
   ) async {
     if (event.article != null) {
       await _saveArticleUseCase(params: event.article!);
-      _getAllSavedArticles(event, emit);
+      await _getAllSavedArticles(event, emit);
     }
   }
 }

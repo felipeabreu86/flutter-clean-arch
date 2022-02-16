@@ -44,8 +44,9 @@ class SavedArticlesView extends HookWidget {
           return const Center(child: CupertinoActivityIndicator());
         } else if (state is LocalArticlesDone) {
           return _buildArticlesList(state.articles!);
+        } else {
+          return Container();
         }
-        return Container();
       },
     );
   }
@@ -58,19 +59,19 @@ class SavedArticlesView extends HookWidget {
           style: TextStyle(color: Colors.black),
         ),
       );
+    } else {
+      return ListView.builder(
+        itemCount: articles.length,
+        itemBuilder: (context, index) {
+          return ArticleWidget(
+            article: articles[index],
+            isRemovable: true,
+            onRemove: (article) => _onRemoveArticle(context, article),
+            onArticlePressed: (article) => _onArticlePressed(context, article),
+          );
+        },
+      );
     }
-
-    return ListView.builder(
-      itemCount: articles.length,
-      itemBuilder: (context, index) {
-        return ArticleWidget(
-          article: articles[index],
-          isRemovable: true,
-          onRemove: (article) => _onRemoveArticle(context, article),
-          onArticlePressed: (article) => _onArticlePressed(context, article),
-        );
-      },
-    );
   }
 
   void _onBackButtonTapped(BuildContext context) {
